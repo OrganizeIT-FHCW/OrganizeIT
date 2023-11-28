@@ -30,9 +30,10 @@ The issue is automatically added to the board with "github-project-automation".
 
     ![Picture - Create branch - Checkout locally](./md-pics/issue-pr_02_create-branch.png)
 
-2. Checkout and work locally
 > [!IMPORTANT]
 > Each commit should be linked to an issue!
+
+2. Checkout and work locally
 
     ![Picture - Link commit to issue #ISSUENUMBER](./md-pics/issue-pr_03_mention-commit.png)
     Therefore the issue number needs to be mentioned in the commitmessage.
