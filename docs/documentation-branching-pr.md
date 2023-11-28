@@ -7,7 +7,7 @@
 
 ## Create an issue
 
-The following fields should be filled in for each issue (task):
+**The following fields should be filled in for each issue (task):**
 
 * Title
 * Description (Definition of done)
@@ -31,8 +31,8 @@ The issue is automatically added to the board with "github-project-automation".
     ![Picture - Create branch - Checkout locally](./md-pics/issue-pr_02_create-branch.png)
 
 2. Checkout and work locally
-    > [!IMPORTANT]
-    > Each commit should be linked to an issue!
+> [!IMPORTANT]
+> Each commit should be linked to an issue!
 
     ![Picture - Link commit to issue #ISSUENUMBER](./md-pics/issue-pr_03_mention-commit.png)
     Therefore the issue number needs to be mentioned in the commitmessage.
@@ -52,6 +52,13 @@ The issue is automatically added to the board with "github-project-automation".
     As changes cannot be pushed directly into the "main" branch, pull requests are required.
 
     To ensure that the issue is automatically closed after a successful merge, it is important that `closes #ISSUE-NUMER` is written in the description of the pull request.
+
+    **The following fields should be filled in for each pull request (task):**
+
+    * Title
+    * Description (Definition of done) & `closes #ISSUE-NUMER`
+    * Assignee (who is in charge of this task)
+    * **Reviewers**
 
     A link to the issue is therefore also created. This makes it easier to track when and how work was completed.
 
