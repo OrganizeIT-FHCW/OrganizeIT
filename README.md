@@ -7,3 +7,4 @@ This productivity tool offers work spaces for individuals, teams, students, flat
 ## Documentation
 
 * [Branching and pull requests](./docs/documentation-branching-pr.md)
+* [Multimember Commits](./docs/multimember-commit.md)
