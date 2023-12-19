@@ -28,6 +28,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
         }
     }
 }
