@@ -12,27 +12,29 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.arkivanov.decompose.extensions.compose.stack.Children
+import com.arkivanov.decompose.extensions.compose.stack.animation.slide
+import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
+import com.arkivanov.decompose.extensions.compose.subscribeAsState
+import navigation.RootComponent
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import screens.SpaceScreen
+import screens.ToDoScreen
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun App() {
+fun App(root: RootComponent) {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello World!") }
-        var showImage by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Compose: ${Greeting().greet()}"
-                showImage = !showImage
-            }) {
-                Text(greetingText)
-            }
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
-                )
+        val childStack by root.childStack.subscribeAsState()
+        Children(
+            stack = childStack,
+            animation = stackAnimation(slide())
+        ) {
+            child ->
+            when(val instance = child.instance) {
+                is RootComponent.Child.SpaceScreen -> SpaceScreen(instance.component)
+                is RootComponent.Child.ToDoScreen -> ToDoScreen(instance.component)
             }
         }
     }

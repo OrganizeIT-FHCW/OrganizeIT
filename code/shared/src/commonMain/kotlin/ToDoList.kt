@@ -11,6 +11,7 @@ class ToDoList (var title: String, var description: String){
     fun addTask(title: String, description: String, dueDate: LocalDateTime)
     {
         val t = Task(title, description, dueDate, false)
+        tasks.add(t)
     }
 
     fun editTitle(newTitle: String)
